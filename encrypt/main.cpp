@@ -26,11 +26,11 @@ int main()
 {
 	setlocale(0, "");
 	entr();
-	pus1 = get<1>(strtovec(pas1, pus1)); //первое
-	exp(); // второе
-	pas3 = pis(pas3); //третье
-	pus3 = get<1>(strtovec(pas3, pus3)); //третье
-	pus3 = dis(pus3); //третье
+	pus1 = get<1>(strtovec(pas1, pus1)); //first
+	exp(); // second
+	pas3 = pis(pas3); //thr
+	pus3 = get<1>(strtovec(pas3, pus3)); //thr
+	pus3 = dis(pus3); //thr
 	pus1 = shifr(pus1, pus2);
 	pus1 = shifr(pus1, pus3);
 	cout << get<1>(vectostr(pus1, pas1)) << endl;
@@ -38,11 +38,11 @@ int main()
 
 void entr()
 {
-	cout << "Первое кодовое слово (любые англиские буквы или цифры): ";
+	cout << "first (any english letters or numbers): ";
 	cin >> pas1;
-	cout << "Второе кодовое слово (ТОЛЬКО цифры): ";
+	cout << "second (ONLY numbers minimum 2, but preferably more): ";
 	cin >> pas2;
-	cout << "Третье кодовое слово (ТОЛЬКО буквы, минимум 3): ";
+	cout << "third (ONLY letters minimum 3, but preferably more): ";
 	cin >> pas3;
 }
 
