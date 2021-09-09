@@ -133,7 +133,7 @@ vector <int> strtovec(string str, vector <int> vec)
 		else if (str[i] == '9')
 			vec.push_back(62);
 	}
-	return std::make_tuple(str, vec);
+	return vec;
 }
 
 string vectostr(vector <int> vec, string str)
@@ -266,7 +266,7 @@ string vectostr(vector <int> vec, string str)
 		else if (vec[i] == 0)
 			str += '9';
 	}
-	return make_tuple(vec, str);
+	return str;
 }
 
 vector <int> shifr(vector <int> a, vector <int> b)
