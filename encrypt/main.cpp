@@ -54,4 +54,5 @@ int main()
 	pus1 = shifr(pus1, pus2);
 	pus1 = shifr(pus1, pus3);
 	cout << vectostr(pus1, pas1) << endl;
+	system("pause");
 }
