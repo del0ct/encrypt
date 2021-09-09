@@ -4,7 +4,7 @@
 #include <vector>
 #include <tuple>
 using namespace std;
-tuple<string, vector <int>> strtovec(string str, vector <int> vec)
+vector <int> strtovec(string str, vector <int> vec)
 {
 	for (int i = 0; i < (int)str.length(); i++)
 	{
@@ -136,7 +136,7 @@ tuple<string, vector <int>> strtovec(string str, vector <int> vec)
 	return std::make_tuple(str, vec);
 }
 
-tuple<vector <int>, string> vectostr(vector <int> vec, string str)
+string vectostr(vector <int> vec, string str)
 {
 	str.erase(0, str.length());
 	for (int i = 0; i < (int)vec.size(); i++)
@@ -267,4 +267,70 @@ tuple<vector <int>, string> vectostr(vector <int> vec, string str)
 			str += '9';
 	}
 	return make_tuple(vec, str);
+}
+
+vector <int> shifr(vector <int> a, vector <int> b)
+{
+	int r = 0;
+	for (int i = 0; i < (int)a.size(); i++)
+	{
+		if (r < (int)b.size())
+		{
+			a[i] *= b[r];
+			r += 1;
+		}
+		else
+		{
+			r = 0;
+			a[i] *= b[r];
+			r += 1;
+		}
+	}
+	for (int i = 0; i < (int)a.size(); i++)
+	{
+		a[i] %= 62;
+	}
+	return (a);
+}
+
+string pis(string a)
+{
+	int b = 0;
+	while ((a.length() % 3) != 0)
+	{
+		if (b == 0)
+		{
+			a.erase(a.length() - 1, 1);
+			b = 1;
+		}
+		else
+		{
+			a.erase(0, 1);
+			b = 0;
+		}
+	}
+	return a;
+}
+
+vector <int> dis(vector <int> vec)
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	for (int i = 0; i < (int)vec.size(); i++)
+	{
+		if (i < (int)vec.size() / 3)
+			a += (vec[i]) * (10 ^ ((vec.size() / 3) - i));
+		else if ((i >= (int)vec.size() / 3) and (i < (int)(vec.size() / 3) * 2))
+			b += (vec[i]) * (10 ^ (((vec.size() / 3)) * 2 - i));
+		else
+			c += (vec[i]) * (10 ^ (vec.size() - i));
+	}
+	int diskr = b * b - 4 * a * c;
+	if (diskr < 0)
+		return (vector <int> { a, b, c });
+	else if (diskr == 0)
+		return (vector <int> { a, -b / (a * 2), c });
+	else
+		return (vector <int> { ((-b - (int)round(sqrt(diskr))) / (a * 2)), b, ((-b + (int)round(sqrt(diskr))) / (a * 2))});
 }
