@@ -1,4 +1,4 @@
-Simply encryption based on your 3-simple word.
+Easy password encryption based on your 3 simple words.
 
 In the first line, you can use numbers and letters.
 
