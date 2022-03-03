@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
+#include <cmath>
 #include <tuple>
 using namespace std;
 vector <int> strtovec(string str)
