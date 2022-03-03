@@ -4,6 +4,7 @@
 #include <vector>
 #include <tuple>
 #include <cmath>
+#include "add.cpp"
 using namespace std;
 string pas1, pas2, pas3;
 int a;
